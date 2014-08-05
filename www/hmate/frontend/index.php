@@ -58,9 +58,9 @@ error_reporting(E_ERROR | E_PARSE);
 								<b class="caret"></b>
 							</a> 
 							<ul class="dropdown-menu">
-								<li><a href="inbox.php">inbox</a></li>
-								<li><a href="../backend/logout.php">logout</a></li>
-								<li><a href="userProfile.php?id=<?php 
+								<li><a href="user/inbox/inbox.php">inbox</a></li>
+								<li><a href="login/logout.php">logout</a></li>
+								<li><a href="user/userProfile.php?id=<?php 
 									echo $_SESSION['uid'] ; 
 								?>">My Account</a></li>
 								
@@ -111,7 +111,6 @@ error_reporting(E_ERROR | E_PARSE);
 							<h1>Hobbies</h1>
 						</header>
 					</div>
-					<p>Description of hobbies</p>
 				</div>
 			</div>
 		</div>
@@ -135,133 +134,133 @@ error_reporting(E_ERROR | E_PARSE);
 						<div class="element sports fitness" data-category="sports">
 							<div class="hexagon">
 								<a href="cycling.php"> <span class="mask"></span> <img
-									src="img/2.jpg" alt="filter" />
+									src="img/Cycling.jpg" alt="filter" />
 								</a>
 								<div class="portfolio-title">
 									<h4>
-										John Doe<span>Art-Director</span>
+										Cycling<span>cycling</span>
 									</h4>
 								</div>
 							</div>
 						</div>
 						<div class="element sports fitness" data-category="sports">
 							<div class="hexagon">
-								<a href="sendsms.php"> <span class="mask"></span> <img src="img/1.jpg"
+								<a href="sendsms.php"> <span class="mask"></span> <img src="img/2Cricket.jpg"
 									alt="filter" />
 								</a>
 								<div class="portfolio-title">
 									<h4>
-										John Doe<span>Art-Director</span>
+										Cricket<span>cricket</span>
 									</h4>
 								</div>
 							</div>
 						</div>
 						<div class="element sports fitness" data-category="sports">
 							<div class="hexagon">
-								<a href="#"> <span class="mask"></span> <img src="img/3.jpg"
+								<a href="#"> <span class="mask"></span> <img src="img/Badminton.jpg"
 									alt="filter" />
 								</a>
 								<div class="portfolio-title">
 									<h4>
-										John Doe<span>Art-Director</span>
+										Badminton<span>badminton</span>
 									</h4>
 								</div>
 							</div>
 						</div>
 						<div class="element sports" data-category="sports">
 							<div class="hexagon">
-								<a href="#"> <span class="mask"></span> <img src="img/2.jpg"
+								<a href="#"> <span class="mask"></span> <img src="img/Volleyball.jpg"
 									alt="filter" />
 								</a>
 								<div class="portfolio-title">
 									<h4>
-										John Doe<span>Art-Director</span>
-									</h4>
-								</div>
-							</div>
-						</div>
-						<div class="element mdance fitness" data-category="branding">
-							<div class="hexagon">
-								<a href="#"> <span class="mask"></span> <img src="img/1.jpg"
-									alt="filter" />
-								</a>
-								<div class="portfolio-title">
-									<h4>
-										John Doe<span>Art-Director</span>
-									</h4>
-								</div>
-							</div>
-						</div>
-						<div class="element Logo_design fitness"
-							data-category="Logo_design">
-							<div class="hexagon">
-								<a href="#"> <span class="mask"></span> <img src="img/3.jpg"
-									alt="filter" />
-								</a>
-								<div class="portfolio-title">
-									<h4>
-										John Doe<span>Art-Director</span>
-									</h4>
-								</div>
-							</div>
-						</div>
-						<div class="element other print" data-category="other">
-							<div class="hexagon">
-								<a href="#"> <span class="mask"></span> <img src="img/2.jpg"
-									alt="filter" />
-								</a>
-								<div class="portfolio-title">
-									<h4>
-										John Doe<span>Art-Director</span>
+										Volleyball<span>Volleyball</span>
 									</h4>
 								</div>
 							</div>
 						</div>
 						<div class="element fitness" data-category="fitness">
 							<div class="hexagon">
-								<a href="#"> <span class="mask"></span> <img src="img/3.jpg"
+								<a href="#"> <span class="mask"></span> <img src="img/Running.jpg"
 									alt="filter" />
 								</a>
 								<div class="portfolio-title">
 									<h4>
-										John Doe<span>Art-Director</span>
+										Running
+									</h4>
+								</div>
+							</div>
+						</div>
+						<div class="element fitness"
+							data-category="fitness">
+							<div class="hexagon">
+								<a href="#"> <span class="mask"></span> <img src="img/Yoga.jpg"
+									alt="filter" />
+								</a>
+								<div class="portfolio-title">
+									<h4>
+										Yoga
 									</h4>
 								</div>
 							</div>
 						</div>
 						<div class="element fitness" data-category="fitness">
 							<div class="hexagon">
-								<a href="#"> <span class="mask"></span> <img src="img/1.jpg"
+								<a href="#"> <span class="mask"></span> <img src="img/Aerobics.jpg"
 									alt="filter" />
 								</a>
 								<div class="portfolio-title">
 									<h4>
-										John Doe<span>Art-Director</span>
+										Aerobics
 									</h4>
 								</div>
 							</div>
 						</div>
-						<div class="element Logo_design fitness"
-							data-category="Logo_design">
+						<div class="element mdance" data-category="mdance">
 							<div class="hexagon">
-								<a href="#"> <span class="mask"></span> <img src="img/3.jpg"
+								<a href="#"> <span class="mask"></span> <img src="img/Dance.jpg"
 									alt="filter" />
 								</a>
 								<div class="portfolio-title">
 									<h4>
-										John Doe<span>Art-Director</span>
+										Dance
 									</h4>
 								</div>
 							</div>
 						</div>
 						<div class="element carts" data-category="carts">
 							<div class="hexagon">
-								<a href="#"> <span class="mask"></span> <img src="img/1.jpg"
+								<a href="#"> <span class="mask"></span> <img src="img/Cooking.jpg"
 									alt="filter" />
 								</a>
 								<div class="portfolio-title">
 									<h4>
-										John Doe<span>Art-Director</span>
+										Cooking
+									</h4>
+								</div>
+							</div>
+						</div>
+						<div class="element mdance"
+							data-category="mdance">
+							<div class="hexagon">
+								<a href="#"> <span class="mask"></span> <img src="img/Guitar.jpg"
+									alt="filter" />
+								</a>
+								<div class="portfolio-title">
+									<h4>
+										Guitar
+									</h4>
+								</div>
+							</div>
+						</div>
+						<div class="element carts" data-category="carts">
+							<div class="hexagon">
+								<a href="#"> <span class="mask"></span> <img src="img/Photography.jpg"
+									alt="filter" />
+								</a>
+								<div class="portfolio-title">
+									<h4>
+										Photography
 									</h4>
 								</div>
 							</div>
@@ -281,74 +280,74 @@ error_reporting(E_ERROR | E_PARSE);
 					<div class=" container TitleSection">
 						<header class="page-head">
 							<h1>
-								<small> Events</small>
+								<small>Events</small>
 							</h1>
 						</header>
 					</div>
-					<p>List of Events to go here</p>
+					<h2>Upcoming HobbyMate Events</h2>
 					<div class="row">
 						<div class="col-xs-12 col-md-3 col-sm-6">
 							<div class="about_wrap_one">
 								<div class="hexagon">
-									<a href="#"> <span class="mask"></span> <img src="img/1.jpg"
+									<a href="#"> <span class="mask"></span> <img src="img/Cycling.jpg"
 										alt="filter" />
 									</a>
 									<div class="portfolio-title">
 										<h4>
-											Event<span>Name</span>
+											Cycling @ HSR
 										</h4>
 									</div>
 								</div>
-								<p>Short Description</p>
-								<button type="submit" class="btn btn-default">Check Out</button>
+								<p>Cycling enthusiats meeting @ HSR, Bangalore</p>
+								<button class="btn btn-default">30th Nov</button>
 							</div>
 						</div>
 						<div class="col-xs-12 col-md-3 col-sm-6">
 							<div class="about_wrap_one">
 								<div class="hexagon">
-									<a href="#"> <span class="mask"></span> <img src="img/2.jpg"
+									<a href="#"> <span class="mask"></span> <img src="img/Running.jpg"
 										alt="filter" />
 									</a>
 									<div class="portfolio-title">
 										<h4>
-											Event<span>Name</span>
+											Run for Fun
 										</h4>
 									</div>
 								</div>
-								<p>Short Description</p>
-								<button type="submit" class="btn btn-default">Check Out</button>
+								<p>Runners meeting @ Sarjapur, Bangalore</p>
+								<button class="btn btn-default">1st Jan</button>
 							</div>
 						</div>
 						<div class="col-xs-12 col-md-3 col-sm-6">
 							<div class="about_wrap_one">
 								<div class="hexagon">
-									<a href="#"> <span class="mask"></span> <img src="img/3.jpg"
+									<a href="#"> <span class="mask"></span> <img src="img/Cooking.jpg"
 										alt="filter" />
 									</a>
 									<div class="portfolio-title">
 										<h4>
-											Event<span>Name</span>
+											Let's HOG @ Whitefield
 										</h4>
 									</div>
 								</div>
-								<p>Short Description</p>
-								<button type="submit" class="btn btn-default">Check Out</button>
+								<p>Whitefield's Chef meet to serve awesome food</p>
+								<button class="btn btn-default">2nd Feb</button>
 							</div>
 						</div>
 						<div class="col-xs-12 col-md-3 col-sm-6">
 							<div class="about_wrap_one">
 								<div class="hexagon">
-									<a href="#"> <span class="mask"></span> <img src="img/1.jpg"
+									<a href="#"> <span class="mask"></span> <img src="img/Guitar.jpg"
 										alt="filter" />
 									</a>
 									<div class="portfolio-title">
 										<h4>
-											Event Name<span>Date</span>
+											JAM @ Indiranagar
 										</h4>
 									</div>
 								</div>
-								<p>Short Description</p>
-								<button type="submit" class="btn btn-default">Check Out</button>
+								<p>Musicians meet to celebrate awesomeness!!!</p>
+								<button class="btn btn-default">3rd March</button>
 							</div>
 						</div>
 					</div>
@@ -421,99 +420,23 @@ error_reporting(E_ERROR | E_PARSE);
 							</h1>
 						</header>
 					</div>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-						nibh erat, sagittis sit amet congue at, aliquam eu libero. Integer
-						molestie, turpis vel ultrices facilisis, nisi mauris sollicitudin
-						mauris. aliquam eu libero. Integer molestie, turpis vel ultrices
-						facilisis, nisi mauris sollicitudin mauris.</p>
+					<p>HobbyMate is platform to connect people sharing similar intersts. Create your gang, indulge in your favourite by inviting your gang or participating in one of the HobbyMate
+					   events. HobbyMate is new kid on the block and looks forward to the support & suggestions from you.</p>
 					<div class="row">
 						<div class="col-xs-12 col-md-3 col-sm-6">
 							<div class="about_wrap_one">
 								<div class="hexagon">
-									<a href="#"> <span class="mask"></span> <img src="img/1.jpg"
+									<a href="#"> <span class="mask"></span> <img src="img/Vishal.jpg"
 										alt="filter" />
 									</a>
 									<div class="portfolio-title">
 										<h4>
-											John Doe<span>Art-Director</span>
+											Vishal Arhatia<span>Jack of all</span>
 										</h4>
 									</div>
 								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Aenean nibh erat, sagittis sit amet congue at, aliquam eu
-									libero.</p>
-								<ul class="about_social">
-									<li><a href="#"><i class="fa fa-facebook"></i> </a></li>
-									<li><a href="#"><i class="fa fa-google-plus"></i> </a></li>
-									<li><a href="#"><i class="fa fa-twitter"></i> </a></li>
-									<li><a href="#"><i class="fa fa-linkedin"></i> </a></li>
-									<li><a href="#"><i class="fa fa-pinterest"></i> </a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-xs-12 col-md-3 col-sm-6">
-							<div class="about_wrap_one">
-								<div class="hexagon">
-									<a href="#"> <span class="mask"></span> <img src="img/2.jpg"
-										alt="filter" />
-									</a>
-									<div class="portfolio-title">
-										<h4>
-											John Doe<span>Art-Director</span>
-										</h4>
-									</div>
-								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Aenean nibh erat, sagittis sit amet congue at, aliquam eu
-									libero.</p>
-								<ul class="about_social">
-									<li><a href="#"><i class="fa fa-facebook"></i> </a></li>
-									<li><a href="#"><i class="fa fa-google-plus"></i> </a></li>
-									<li><a href="#"><i class="fa fa-twitter"></i> </a></li>
-									<li><a href="#"><i class="fa fa-linkedin"></i> </a></li>
-									<li><a href="#"><i class="fa fa-pinterest"></i> </a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-xs-12 col-md-3 col-sm-6">
-							<div class="about_wrap_one">
-								<div class="hexagon">
-									<a href="#"> <span class="mask"></span> <img src="img/3.jpg"
-										alt="filter" />
-									</a>
-									<div class="portfolio-title">
-										<h4>
-											John Doe<span>Art-Director</span>
-										</h4>
-									</div>
-								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Aenean nibh erat, sagittis sit amet congue at, aliquam eu
-									libero.</p>
-								<ul class="about_social">
-									<li><a href="#"><i class="fa fa-facebook"></i> </a></li>
-									<li><a href="#"><i class="fa fa-google-plus"></i> </a></li>
-									<li><a href="#"><i class="fa fa-twitter"></i> </a></li>
-									<li><a href="#"><i class="fa fa-linkedin"></i> </a></li>
-									<li><a href="#"><i class="fa fa-pinterest"></i> </a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-xs-12 col-md-3 col-sm-6">
-							<div class="about_wrap_one">
-								<div class="hexagon">
-									<a href="#"> <span class="mask"></span> <img src="img/1.jpg"
-										alt="filter" />
-									</a>
-									<div class="portfolio-title">
-										<h4>
-											John Doe<span>Art-Director</span>
-										</h4>
-									</div>
-								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Aenean nibh erat, sagittis sit amet congue at, aliquam eu
-									libero.</p>
+								<p>The brain behind HobbyMate. Crazy about superhero and animation movies. All time favourite being Spider-Man and Poo the Panda of Kung-Fu Panda. He has worked in major IT companies for 8 years. Curretly trying to put his management
+									learning in practice at HobbyMate. </p>
 								<ul class="about_social">
 									<li><a href="#"><i class="fa fa-facebook"></i> </a></li>
 									<li><a href="#"><i class="fa fa-google-plus"></i> </a></li>
@@ -544,14 +467,13 @@ error_reporting(E_ERROR | E_PARSE);
 						</div>
 						<div class="row">
 							<div class="col-xs-12 col-md-7 col-sm-12">
-								<p>One morning, when Gregor Samsa woke from troubled dreams, he
-									found himself transformed in his bed into a horrible vermin. He
-									lay on his armour-like back, and if he lifted his head a little
-									he could see his brown belly, slightly domed and divided by
-									arches into stiff sections</p>
-								<p>
-									Please be patient while waiting for response. (24/7 Support!) <br>
-									<strong> Phone General Inquiries: 1-234-567-8910-1234</strong>
+								<h3>Contact Form</h3>
+								<p>Vishal is a fitness freak person and likes to indulge in various sports.
+								But, when he moved out to bangalore for his job, he struggled to find people 
+								who share the similar passion and interests. So, he wondered if there is a 
+								platform where he can find people who share similar interests like him and 
+								would like to indulge in sporting activities with him. He visited HobbyMate 
+								and from then on HobbyMate has been his solution for all his hobby needs.
 								</p>
 								<div class="contact_wrap">
 									<h3>Contact Form</h3>
@@ -567,10 +489,6 @@ error_reporting(E_ERROR | E_PARSE);
 												placeholder="Enter Email*" />
 										</div>
 										<div class="form-group">
-											<input type="text" size="50" name="website" id="website"
-												value="" class="form-control" placeholder="Website" />
-										</div>
-										<div class="form-group">
 											<textarea class="form-control required" rows="6" id="message"
 												placeholder="Your Message*"></textarea>
 										</div>
@@ -582,20 +500,18 @@ error_reporting(E_ERROR | E_PARSE);
 								<div class="jumbotron">
 									<h3>Address Info</h3>
 									<address>
-										<strong>Company, Inc.</strong><br> 795 Folsom Ave, Suite 600
-										San Francisco, CA 94107<br> <abbr title="Phone">Tel:</abbr>
-										(123) 456-7890<br> <abbr title="Fax">Fax:</abbr> (123)
-										456-7890
+										<strong>HobbyMate Inc.</strong><br> IIM Bangalore<br> <abbr title="Phone">Tel:</abbr>
+										9591636555<br>
 									</address>
 									<address>
-										<strong>Email</strong> <a href="mailto:#">first.last@example.com</a><br>
-										<strong>website</strong> <a href="#page13">www.company.com</a>
+										<strong>Email</strong> <a href="mailto:#">varhatia@gmail.com</a><br>
+										<strong>website</strong> <a href="#">www.hobbymate.in</a>
 									</address>
 								</div>
-								<div class="google">
-									<h3>Find the Address</h3>
-									<div id="map"></div>
-								</div>
+<!-- 								<div class="google"> -->
+<!-- 									<h3>Find the Address</h3> -->
+<!-- 									<div id="map"></div> -->
+<!-- 								</div> -->
 							</div>
 						</div>
 					</div>
@@ -622,7 +538,7 @@ error_reporting(E_ERROR | E_PARSE);
 					</h3>
 					<div class="row">
 						<div class="col-xs-6 col-sm-6 col-md-6">
-							<a href="https://localhost/frontend/fbconnect.php" class="btn btn-lg btn-primary btn-block">Facebook</a>
+							<a href="https://localhost/frontend/login/fbconnect.php" class="btn btn-lg btn-primary btn-block">Facebook</a>
 						</div>
 						<div class="col-xs-6 col-sm-6 col-md-6">
 							<a href="#" class="btn btn-lg btn-info btn-block">Google</a>

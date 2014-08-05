@@ -3,19 +3,8 @@ include_once 'common/header.php';
 session_start();
 
 // connect to the database
-
-$config_array = parse_ini_file("../config/config.ini");
-$host=$config_array['host'];
-$dbusername=$config_array['username'];
-$dbpassword=$config_array['password'];
-$db_name=$config_array['db'];
-session_start();
-
-$link = mysqli_connect("$host", "$dbusername", "$dbpassword","$db_name");
-// Check connection
-if (mysqli_connect_errno()) {
-	echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
+include_once '../backend/common/dbConnect.php';
+include_once '../backend/common/shared.php';
 
 $organization = $_POST['organization'];
 $orgLocation = $_POST['orgLocation'];
@@ -75,15 +64,13 @@ else
 }
 
 $selectQuery .= ";";
-//echo '<pre>';print_r($selectQuery);echo '</pre>';
-$result = mysqli_query($link,$selectQuery);
+// echo '<pre>';print_r($selectQuery);echo '</pre>';
+$result = mysql_query($selectQuery);
 
-$count=mysqli_num_rows($result);
-//echo '<pre>';print_r($count);echo '</pre>';
+$count=mysql_num_rows($result);
+// echo '<pre>';print_r($count);echo '</pre>';
 
 ?>
-<script type="text/javascript" src="js/user.js">
-</script>
 
 <script>
 
@@ -97,42 +84,24 @@ function UpdateRecord(id)
 		{
 			document.getElementById("responsecontainer").innerHTML=xmlhttp.responseText;
 		}	
-	}
-	xmlhttp.open("GET","friendRequest.php?q="+id,true);
+	};
+	xmlhttp.open("GET","user/friends/friendRequest.php?q="+id,true);
 	xmlhttp.send();
 	   
 }
-
-//This function is written keeping future in mind. We may need to invoke more than 1 function so this is required.
-function addLoadEvent(func) {
-  var oldonload = window.onload;
-  if (typeof window.onload != 'function') {
-	window.onload = func;
-  } else {
-//	window.onload = function() {
-//	  if (oldonload) {
-		oldonload();
-//		  }
-	  func();
-	//}
-  }
-}
-addLoadEvent(function() {
-})
-
 
 </script>
 
 
 
 <?php //  
-echo '<pre>';print_r($selectQuery);echo '</pre>';
+// echo '<pre>';print_r($selectQuery);echo '</pre>';
 
 echo "<br><br> <div class=\"container\">
  <div class=\"well col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2\">";
 
 
-while($row = mysqli_fetch_array($result))
+while($row = mysql_fetch_array($result))
 {
 	$image = $row['userimage'];
 	$userId = $row['uid'];
@@ -179,9 +148,9 @@ echo "        <div class=\"row user-row\">
 	//Query other hobbies of users
  	$selectQuery = "SELECT hobbyname from userhobbydetail where uid = '$userId'"; 
 	//echo '<pre>';print_r($selectQuery);echo '</pre>';
-	$resultHobby = mysqli_query($link,$selectQuery);
+	$resultHobby = mysql_query($link,$selectQuery);
 	$hobbies = '';
-	while($row = mysqli_fetch_array($resultHobby))
+	while($row = mysql_fetch_array($resultHobby))
 	{
 		$hobbies .= "\"".$row['hobbyname']."\" ";
 		

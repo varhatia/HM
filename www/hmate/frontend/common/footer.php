@@ -26,30 +26,30 @@
 <!-- JavaScript -->
 
 <!-- <script src="js/tab.js"></script> -->
-<script src="js/addelements.js"></script>
-<script src="js/utilities.js"></script>
+<script src="<?php echo $_SESSION['docRoot']?>/frontend/js/addelements.js"></script>
+<script src="<?php echo $_SESSION['docRoot']?>/frontend/js/utilities.js"></script>
 
-<script src="js/moment.min.js"></script>
-<script src="js/bootstrap-datetimepicker.min.js"></script>
-<script src="js/nicescroll.min.js"></script>
+<script src="<?php echo $_SESSION['docRoot']?>/frontend/js/moment.min.js"></script>
+<script src="<?php echo $_SESSION['docRoot']?>/frontend/js/bootstrap-datetimepicker.min.js"></script>
+<script src="<?php echo $_SESSION['docRoot']?>/frontend/js/nicescroll.min.js"></script>
 <!-- jquery nice scroll-->
-<script src="js/pace.min.js"></script>
+<script src="<?php echo $_SESSION['docRoot']?>/frontend/js/pace.min.js"></script>
 <!--page load progress bar-->
-<!-- <script src="js/jquery.validate.min.js"></script> -->
+<!-- <script src="<?php echo $_SESSION['docRoot']?>/frontend/js/jquery.validate.min.js"></script> -->
 <!--contact page-->
 <script
 	src="https://maps.google.com/maps/api/js?sensor=true"></script>
 <!--google map contact page-->
-<script src="js/gmaps.min.js"></script>
+<script src="<?php echo $_SESSION['docRoot']?>/frontend/js/gmaps.min.js"></script>
 <!--google map contact page-->
-<script src="js/isotope.min.js"></script>
+<script src="<?php echo $_SESSION['docRoot']?>/frontend/js/isotope.min.js"></script>
 <!--Portfolio Filter-->
-<script src="js/flexslider.min.js"></script>
+<script src="<?php echo $_SESSION['docRoot']?>/frontend/js/flexslider.min.js"></script>
 <!-- FlexSlider -->
-<script src="js/waypoints.min.js"></script>
+<script src="<?php echo $_SESSION['docRoot']?>/frontend/js/waypoints.min.js"></script>
 
 <!--Header Effect-->
-<!-- <script src="js/custom_min.js"></script> -->
+<!-- <script src="<?php echo $_SESSION['docRoot']?>/frontend/js/custom_min.js"></script> -->
 <!-- Custom JavaScript  -->
 </body>
 </html>

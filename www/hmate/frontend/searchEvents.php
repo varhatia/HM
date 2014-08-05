@@ -1,21 +1,9 @@
 <?php
 include_once 'common/header.php';
-session_start();
-
 // connect to the database
 
-$config_array = parse_ini_file("../config/config.ini");
-$host=$config_array['host'];
-$dbusername=$config_array['username'];
-$dbpassword=$config_array['password'];
-$db_name=$config_array['db'];
-session_start();
-
-$link = mysqli_connect("$host", "$dbusername", "$dbpassword","$db_name");
-// Check connection
-if (mysqli_connect_errno()) {
-	echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
+include_once '../backend/common/dbConnect.php';
+include_once '../backend/common/shared.php';
 
 $organization = $_POST['organization'];
 $orgLocation = $_POST['orgLocation'];
@@ -63,14 +51,21 @@ else
 
 $selectQuery .= " ORDER BY  `datetime` ASC 
 LIMIT 15; ";
-//echo '<pre>';print_r($selectQuery);echo '</pre>';
-$result = mysqli_query($link,$selectQuery);
-?>
+// echo '<pre>';print_r($selectQuery);echo '</pre>';
+$result = mysql_query($selectQuery);
 
-<div class="content">
-<div class="container">
-<div class="row">
-		
+?>
+<!-- <div id="wrapper"> -->
+<!-- <div id="main" class="container"> -->
+<!-- <!-- <div class="content"> -->
+<!-- <!-- <div class="container"> -->
+<!-- <div class="row"> -->
+<div id="wrapper">
+	<div id="main" class="container">
+		<div class="row">
+
+			<div class="col-md-3">
+
 		<div class="tabbable tabs-left">
 
 			<ul class="nav nav-tabs" id="customtabs">
@@ -83,6 +78,7 @@ $result = mysqli_query($link,$selectQuery);
 			</ul>
 
 		</div>
+		</div>
 
 		<div class="col-md-9">
 			<div class="page-header">
@@ -93,7 +89,7 @@ $result = mysqli_query($link,$selectQuery);
 <?php 
 	
 
-while($row = mysqli_fetch_array($result))
+while($row = mysql_fetch_array($result))
 {
 	$date = date_create($row['datetime']);
 	$tempDate = date_format($date, 'jS M');
@@ -112,7 +108,7 @@ while($row = mysqli_fetch_array($result))
             <div class=\"col-md-6 col-lg-offset-1\">
                 	<h4>
 
-					<a href=\"events.php?id=$event\">$eventName</a>
+					<a href=\"events/events.php?id=$event\">$eventName</a>
 
 				</h4>
                 <p>$desc</p>

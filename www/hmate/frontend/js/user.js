@@ -26,18 +26,7 @@ $(document).ready(function() {
 
     $('[data-toggle="tooltip"]').tooltip();
 
-//    $('#join').change(function(e) {
-//    	selection = $(this).val();
-//    	if(selection != 0)
-//    	{
-//    		$('#place').prop('disabled', false);
-//    	}
-//    	else
-//    	{
-//    		$('#place').prop('disabled', 'disabled');
-//    	}
-//    });
-
+    //send facebook invite to friends
     $('#invite').change(function() {
     	selection = $(this).val();
         if (selection == 1) {
@@ -53,6 +42,7 @@ $(document).ready(function() {
         }
     });
     
+    //Based on place of event launch model
     $('#place').change(function() {
     	selection = $(this).val();
         if (selection == 1) {
@@ -70,22 +60,8 @@ $(document).ready(function() {
 		
     });
 
-//    $('#createEvent').change(function() {
-//    	if (selection == 1) {
-//        	$("#selectResidence").modal('show');
-//        	$('#invite').prop('disabled', false);
-//        }
-//        else if (selection == 2) {
-//        	$("#selectWork").modal('show');
-//        	$('#invite').prop('disabled', false);
-//        }//alert('Call modal function');
-//        else
-//        {
-//        	$('#invite').prop('disabled', 'disabled');        	
-//        }
-//		
-//    });
-    
+
+    //update DB for event created
     $('.btn-default').click(function () {
         var id = $(this).attr('id');
         
@@ -118,7 +94,7 @@ $(document).ready(function() {
 //            alert("landmark : "+landmark);
 
             //Ajax post data to server
-            $.post('../frontend/planEvent.php', post_data).done(function(response){  
+            $.post('../frontend/user/events/planEvent.php', post_data).done(function(response){  
                 
                 //load json data from server and output message     
                 if(response.type == 'error')
@@ -131,8 +107,7 @@ $(document).ready(function() {
                 }
 
                 // uncomment below 2 lines to display result
-//                alert(response);
-//                $("#resultPHP input").hide().html(response).slideDown();
+                // alert(response);
             });
 
             $( "#a" ).next('li').removeClass('disabled');
@@ -153,41 +128,7 @@ $(document).ready(function() {
         });
 
 
-//    $('.btn-style').click(function () {
-//        var id = $(this).attr('id');
-//        alert(id);
-//        if(id == '1')
-//        {
-//            var activity_name       = $('input[name=activityName]').val(); 
-////          var user_email      = $('input[name=email]').val();
-////          var user_phone      = $('input[name=phone]').val();
-////          var user_message    = $('textarea[name=message]').val();
-//
-//          alert(activity_name);
-//
-//        	 $( "#a" ).next('li').removeClass('disabled');
-//             $( "#a" ).next('li').find('a').attr("data-toggle","tab");
-//
-//             $( "#a" ).next('li').children("a").tab("show");
-//        }
-//        
-//        if(id == 'createEvent')
-//        {
-//            var activity_name       = $('input[name=activityName]').val(); 
-////          var user_email      = $('input[name=email]').val();
-////          var user_phone      = $('input[name=phone]').val();
-////          var user_message    = $('textarea[name=message]').val();
-//
-//          alert(activity_name);
-//
-//        	 $( "#a" ).next('li').removeClass('disabled');
-//             $( "#a" ).next('li').find('a').attr("data-toggle","tab");
-//
-//             $( "#a" ).next('li').children("a").tab("show");
-//        }
-//
-//        });
-
+    //save the values filled when model launched
     $('#save').click(function() {
         var id = $(this).attr('id');
         alert(id);
@@ -201,6 +142,7 @@ $(document).ready(function() {
         }
     });
 
+    //function to parse url to get the parameters passed
 	function getQueryVariable(variable) {
   	  var query = window.location.search.substring(1);
   	  var vars = query.split("&");
@@ -213,7 +155,8 @@ $(document).ready(function() {
   	  alert('Query Variable ' + variable + ' not found');
   	}
 
-    $('#join').click(function() {
+    
+	$('#join').click(function() {
     		//write ajax to update attendie details
     		//Ajax post data to server
     	$('#initial').remove();//'disabled',true);
@@ -222,7 +165,7 @@ $(document).ready(function() {
 
     		//var eventId = $_GET['id'];
     		post_data = {'eventId':eventId, 'status':1};
-        	$.post('../frontend/updateEventAttendee.php', post_data).done(function(response){  
+        	$.post('../events/updateEventAttendee.php', post_data).done(function(response){  
             
             //load json data from server and output message     
             if(response.type == 'error')
@@ -235,7 +178,7 @@ $(document).ready(function() {
             }
 
             // uncomment below 2 lines to display result
-//            alert(response);
+            // alert(response);
             $("#resultPHP").html(response);
         	});
 
@@ -243,15 +186,14 @@ $(document).ready(function() {
     	});
 
     $('#maybe').click(function() {
-		//write ajax to update attendie details
-		//Ajax post data to server
-	$('#initial').remove();//'disabled',true);
-	//$('#initial').children().prop('disabled',true);
-	var eventId = getQueryVariable("id");
+
+    	$('#initial').remove();//'disabled',true);
+
+    	var eventId = getQueryVariable("id");
 
 		//var eventId = $_GET['id'];
 		post_data = {'eventId':eventId, 'status':2};
-    	$.post('../frontend/updateEventAttendee.php', post_data).done(function(response){  
+    	$.post('../events/updateEventAttendee.php', post_data).done(function(response){  
         
         //load json data from server and output message     
         if(response.type == 'error')
@@ -264,7 +206,7 @@ $(document).ready(function() {
         }
 
         // uncomment below 2 lines to display result
-//        alert(response);
+        // alert(response);
         $("#resultPHP").html(response);
     	});
 
@@ -280,7 +222,7 @@ $(document).ready(function() {
 	
 		//var eventId = $_GET['id'];
 		post_data = {'eventId':eventId, 'status':3};
-    	$.post('../frontend/updateEventAttendee.php', post_data).done(function(response){  
+    	$.post('../events/updateEventAttendee.php', post_data).done(function(response){  
         
         //load json data from server and output message     
         if(response.type == 'error')
@@ -293,7 +235,7 @@ $(document).ready(function() {
         }
 
         // uncomment below 2 lines to display result
-//        alert(response);
+        // alert(response);
         $("#resultPHP").html(response);
     	});
 
@@ -316,12 +258,10 @@ $(document).ready(function() {
 	  		
 	 		//var eventId = $_GET['id'];
 	 		post_data = {'eventId':eventId, 'comment':boxval};
-	     	$.post('../frontend/addComment.php', post_data).done(function(response){  
+	     	$.post('../user/events/addComment.php', post_data).done(function(response){  
 	         
-	      
-
 	        // uncomment below 2 lines to display result
-	     //		         alert(response);
+	     	// alert(response);
 	        $("#resultComment").html(response);
 	     	});
 	     	
@@ -355,13 +295,13 @@ $(document).ready(function() {
  		
 		//var eventId = $_GET['id'];
 		post_data = {'eventId':eventId, 'id':del_id};
-    	$.post('../frontend/deleteComment.php', post_data).done(function(response){  
+    	$.post('../user/events/deleteComment.php', post_data).done(function(response){  
         
      
 
         // uncomment below 2 lines to display result
-//        alert(response);
-       // $("#resultPHP").html(response);
+    	// alert(response);
+        // $("#resultPHP").html(response);
     	});
 
 
@@ -386,7 +326,7 @@ $(document).ready(function() {
 	  		
 	 		//var eventId = $_GET['id'];
 	 		post_data = {'uid':uid, 'comment':boxval};
-	     	$.post('../frontend/addGreeting.php', post_data).done(function(response){  
+	     	$.post('../user/friends/addGreeting.php', post_data).done(function(response){  
 
 	     	// uncomment below 2 lines to display result
 	     	// alert(response);
@@ -422,13 +362,13 @@ $(document).ready(function() {
  		
 		//var eventId = $_GET['id'];
 		post_data = {'uid':uid, 'id':del_id};
-    	$.post('../frontend/deleteGreeting.php', post_data).done(function(response){  
+    	$.post('../user/friends/deleteGreeting.php', post_data).done(function(response){  
         
      
 
         // uncomment below 2 lines to display result
-//        alert(response);
-       // $("#resultPHP").html(response);
+    	//        alert(response);
+        // $("#resultPHP").html(response);
     	});
 
 
@@ -436,47 +376,87 @@ $(document).ready(function() {
     	return false;
 
     	});
-//
-//    $('#customP').click(function (e) { 
-//    	$('#egang').removeclass('active');
-//    	//e.preventDefault();
-//    	$('#pactivity').addClass('active');
-//    	//$(this).tab('show');
-//      	//$('a[href="' + $(this).attr('href') + '"]').tab('show');
-//     	   
-//    }); 
-
-    //grabs the hash tag from the url
-//    var hash = window.location.hash;
-//    //checks whether or not the hash tag is set
-//    if (hash != "") {
-//      //removes all active classes from tabs
-//      $('#tabs li').each(function() {
-//        $(this).removeClass('active');
-//      });
-//      $('#my-tab-content div').each(function() {
-//        $(this).removeClass('active');
-//      });
-//      //this will add the active class on the hashtagged value
-//      var link = "";
-//      $('#tabs li').each(function() {
-//        link = $(this).find('a').attr('href');
-//        if (link == hash) {
-//          $(this).addClass('active');
-//        }
-//      });
-//      $('#my-tab-content div').each(function() {
-//        link = $(this).attr('id');
-//        if ('#'+link == hash) {
-//          $(this).addClass('active');
-//        }
-//      });
-//    }
     
+
+    //to load more data on click of button
+	var track_click = 1; //track user click on "load more" button, righ now it is 0 click
+	
+	$(".load_more").click(function (e) { //user clicks on button
+	
+			//post page number and load returned data into result element
+			$.post('user/events/networkEvents.php',{'page': track_click}, function(data) {
+			
+				$("#results").append(data); //append data received from server
+	
+				track_click++; //user click increment on load button
+			
+			});
+		});
+
+    //to load more data on click of button
+	var track_click_events = 1; //track user click on "load more" button, righ now it is 0 click
+	
+	$(".load_more_events").click(function (e) { //user clicks on button
+	
+			//post page number and load returned data into result element
+			$.post('user/events/hobbyEvents.php',{'page': track_click_events}, function(data) {
+			
+				$("#resultsEvents").append(data); //append data received from server
+				
+				track_click_events++; //user click increment on load button
+			
+			});
+			
+		});
+
+
+    //to load more users sharing same interest on click of button
+	var track_click_users = 1; //track user click on "load more" button, righ now it is 0 click
+	
+	$(".load_users").click(function (e) { //user clicks on button
+	
+			//post page number and load returned data into result element
+			$.post('user/events/hobbyUsers.php',{'page': track_click_users}, function(data) {
+			
+				$("#hobbyUser").append(data); //append data received from server
+				
+				track_click_users++; //user click increment on load button
+			
+			});
+			
+		});
+
+    //to load more users from same workplace sharing same interest on click of button
+	var track_click_wusers = 1; //track user click on "load more" button, righ now it is 0 click
+	
+	$(".load_users_w").click(function (e) { //user clicks on button
+	
+			$.post('user/events/workHobbyUsers.php',{'page': track_click_wusers}, function(data) {
+			
+				$("#whobbyUser").append(data); //append data received from server
+				
+				track_click_users++; //user click increment on load button
+			
+			});
+		});
+
+    //to load more users from same workplace sharing same interest on click of button
+	var track_click_rusers = 1; //track user click on "load more" button, righ now it is 0 click
+	
+	$(".load_users_r").click(function (e) { //user clicks on button
+		$.post('user/events/placeHobbyUsers.php',{'page': track_click_rusers}, function(data) {
+			
+				$("#rhobbyUser").append(data); //append data received from server
+	
+				track_click_users++; //user click increment on load button
+			
+			});
+		});
+	
+
+	//tabs navigation functionality from different page
     var hash = window.location.hash;
 
     if (hash != "")
         $('#tabs a[href="' + hash + '"]').tab('show');
-//    else
-//        $('#tabs a:first').tab('show');
 });

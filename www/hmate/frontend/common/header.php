@@ -14,21 +14,26 @@ error_reporting(E_ERROR | E_PARSE);
 <meta name="author" content="">
 <meta name="keywords"
 	content="business, corporate, corporate website, creative, html5, marketing, multipurpose, responsive, site templates">
-<link rel="shortcut icon" href="img/favicon.png">
+<link rel="shortcut icon" href="<?php echo $_SESSION['docRoot']?>/frontend/img/favicon.png">
 <title>Passion</title>
 
 <!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="<?php echo $_SESSION['docRoot']?>/frontend/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Add custom CSS here -->
-<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="css/custom.css" rel="stylesheet">
-<link href="css/userProfile.css" rel="stylesheet">
-<link href="css/inbox.css" rel="stylesheet">
-<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+<link href="<?php echo $_SESSION['docRoot']?>/frontend/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="<?php echo $_SESSION['docRoot']?>/frontend/css/custom.css" rel="stylesheet">
+<link href="<?php echo $_SESSION['docRoot']?>/frontend/css/userProfile.css" rel="stylesheet">
+<link href="<?php echo $_SESSION['docRoot']?>/frontend/css/inbox.css" rel="stylesheet">
+<link href="<?php echo $_SESSION['docRoot']?>/frontend/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="<?php echo $_SESSION['docRoot']?>/frontend/js/jquery.min.js"></script>
+<script src="<?php echo $_SESSION['docRoot']?>/frontend/js/bootstrap.min.js"></script>
+
+<script
+	src='https://connect.facebook.net/en_US/all.js'></script>
+<script type="text/javascript" src="<?php echo $_SESSION['docRoot']?>/frontend/js/user.js">
+</script>
 
 </head>
 
@@ -44,16 +49,16 @@ error_reporting(E_ERROR | E_PARSE);
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand logo" href="index.php">HobbyMate</a>
+				<a class="navbar-brand logo" href="<?php echo $_SESSION['docRoot']?>/frontend/index.php">HobbyMate</a>
 			</div>
 			<div class="navbar-collapse collapse ">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="index.php#top">home</a></li>
-					<li><a href="index.php#interests ">hobbies</a></li>
-					<li><a href="index.php#events">events</a></li>
-					<li><a href="index.php#blogs">blogs</a></li>
-					<li><a href="index.php#about">about</a></li>
-					<li><a href="index.php#contact">contact</a></li>
+					<li><a href="<?php echo $_SESSION['docRoot']?>/frontend/index.php#top">home</a></li>
+					<li><a href="<?php echo $_SESSION['docRoot']?>/frontend/index.php#interests ">hobbies</a></li>
+					<li><a href="<?php echo $_SESSION['docRoot']?>/frontend/index.php#events">events</a></li>
+					<li><a href="<?php echo $_SESSION['docRoot']?>/frontend/index.php#blogs">blogs</a></li>
+					<li><a href="<?php echo $_SESSION['docRoot']?>/frontend/index.php#about">about</a></li>
+					<li><a href="<?php echo $_SESSION['docRoot']?>/frontend/index.php#contact">contact</a></li>
 					<?php
 						if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
 					?>
@@ -66,9 +71,9 @@ error_reporting(E_ERROR | E_PARSE);
 								<b class="caret"></b>
 							</a> 
 							<ul class="dropdown-menu">
-								<li><a href="../backend/logout.php">logout</a></li>
-								<li><a href="inbox.php">inbox</a></li>
-								<li><a href="userProfile.php?id=<?php 
+								<li><a href="<?php echo $_SESSION['docRoot']?>/frontend/login/logout.php">Logout</a></li>
+								<li><a href="<?php echo $_SESSION['docRoot']?>/frontend/user/inbox/inbox.php">Inbox</a></li>
+								<li><a href="<?php echo $_SESSION['docRoot']?>/frontend/user/userProfile.php?id=<?php 
 									echo $_SESSION['uid'] ; 
 								?>">My Account</a></li>
 							</ul>
@@ -76,7 +81,7 @@ error_reporting(E_ERROR | E_PARSE);
 					<?php 	
 						} else {
                 	?>
-					<li><a href="index.php#signIn">signIn</a></li>
+					<li><a href="<?php echo $_SESSION['docRoot']?>/frontend/index.php#signIn">signIn</a></li>
                 	<?php 		
                 		}
                 	?>
